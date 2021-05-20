@@ -1,4 +1,4 @@
- These are for you
+
 
 cd into project pip install -r requirements.txt 
 
