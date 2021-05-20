@@ -4,9 +4,7 @@
   
 
 
-Then delete everything inside the migrations folder which is inside the instagram folder
 
-  then run python .env 
 
   Then run
 
