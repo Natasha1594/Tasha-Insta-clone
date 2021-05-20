@@ -6,10 +6,7 @@
 
 
 
-  Then run
-
-
-python manage.py makemigrations instagram
+  
    
    i used the name instagram because my database name is instagram
  
