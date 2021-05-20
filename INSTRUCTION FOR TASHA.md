@@ -1,10 +1,7 @@
 
 
-cd into project pip install -r requirements.txt 
 
- python3 -m venv virtual 
-
- source virtual/bin/activate  
+  
 
 Install Dependencies  
  
