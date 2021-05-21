@@ -89,5 +89,3 @@ class Follow(models.Model):
 
 
 
-class Photo(models.Model):
-  image = CloudinaryField('image')
