@@ -32,7 +32,6 @@ INSTALLED_APPS = [
     'instagram',
     'crispy_forms',
     'cloudinary',
-    'uploads.apps.UploadsConfig',
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
