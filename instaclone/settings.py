@@ -123,10 +123,11 @@ LOGIN_REDIRECT_URL = 'index'
 
 LOGOUT_REDIRECT_URL = 'login'
 
-cloudinary.config( 
-  cloud_name = "ddfn18ffx", 
-  api_key = "257234146242352", 
-  api_secret = "_aKFFYdhlk4aUjPd5KPWcuQE3dA" 
-)
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'ddfn18ffx',
+    'API_KEY': '257234146242352',
+    'API_SECRET': '_aKFFYdhlk4aUjPd5KPWcuQE3dA',
+}
+
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
