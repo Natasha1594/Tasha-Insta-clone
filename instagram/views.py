@@ -215,7 +215,3 @@ def follow(request, to_follow):
         follow_s.save()
         return redirect('user_profile', user_profile3.user.username)
 
-def index(request):
-    photos = Photo.objects.all()
-    ctx = {'photos' : photos}
-    return render(request, 'instagram/index.html', ctx)
