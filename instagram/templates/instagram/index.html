@@ -1,7 +1,4 @@
-{% extends 'instagram/layout.html' %}
-{% load static %}
-{% load crispy_forms_tags %}
-{% block content %}
+{% extends 'instagram/layout.html' %} {% load static %} {% load crispy_forms_tags %} {% block content %}
 <div class="container" style="margin-top:7%;">
     <div class="row">
         <div class="col-md-1"></div>
@@ -10,8 +7,7 @@
                 <button class="btn btn-sm btn-outline-primary ml-4 mb-3" data-toggle="modal" data-target="#imageUpload">
                     Upload Image
                 </button>
-                <div class="modal fade" id="imageUpload" tabindex="-1" role="dialog"
-                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal fade" id="imageUpload" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -22,8 +18,7 @@
                             </div>
                             <div class="modal-body">
                                 <form action="" method="post" enctype="multipart/form-data" novalidate>
-                                    {% csrf_token %}
-                                    {{ form|crispy }}
+                                    {% csrf_token %} {{ form|crispy }}
                                     <button class="btn btn-sm btn-success">Upload</button>
                                     <button type="button" class="btn btn-sm btn-outline-danger" data-dismiss="modal">
                                         Close
@@ -34,19 +29,18 @@
                     </div>
                 </div>
             </div>
-
             {% for image in images %}
             <div class="card mb-4">
                 <div class="card-title">
-                    <img src="{{image.user.profile_picture.url}}" class="rounded-circle border ml-3 mt-2  mr-3"
-                         alt="{{image.user.user.username}}" width="35" height="35">
+                    <img src="{{image.user.profile_picture.url}}" class="rounded-circle border ml-3 mt-2  mr-3" alt="{{image.user.user.username}}" width="35" height="35">
                     <a href="{% url 'user_profile' image.user.user.username  %}" class="mt-4 user">{{image.user.user.username|title}}</a>
                 </div>
                 <div class="card-body mb-4">
-                    <a href="{% url 'comment' image.id %}"><div class="card-text"
-                         style="background-image:url({{ image.image.url }});;background-size: contain;position: sticky">
-                        <img src="{{image.image.url}}" style="" class="card-img" width="100%"/>
-                    </div></a>
+                    <a href="{% url 'comment' image.id %}">
+                        <div class="card-text" style="background-image:url({{ image.image.url }});;background-size: contain;position: sticky">
+                            <img src="{{image.image.url}}" style="" class="card-img" width="100%" />
+                        </div>
+                    </a>
                 </div>
                 <div class="iconic ml-2">
                     <button class="btn btn-sm" type="submit" name="image_id" value="{{image.id}}">
@@ -62,12 +56,10 @@
                 <div class="allcomments mb-4">
                     {% for comment in image.comments.all|slice:'2' %}
                     <div class="comment">
-                        <div class="ml-4"><strong>{{ comment.user.user.username }}</strong> <span
-                                class="text-secondary">{{ comment.comment }}</span>
+                        <div class="ml-4"><strong>{{ comment.user.user.username }}</strong> <span class="text-secondary">{{ comment.comment }}</span>
                         </div>
                     </div>
-                    {% empty %}
-                    {% endfor %}
+                    {% empty %} {% endfor %}
                     <p class="text-secondary ml-4">{{image.created|timesince}}</p>
                 </div>
             </div>
@@ -92,8 +84,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-2 mr-3 mt-1 mb-2">
-                                    <img class="rounded-circle" src="{{ user.profile.profile_picture.url }}"
-                                         width="45px" height="45px">
+                                    <img class="rounded-circle" src="{{ user.profile.profile_picture.url }}" width="45px" height="45px">
                                 </div>
                                 <div class="col-md-6 mr-2 mt-2">
                                     <span><a href="{% url 'user_profile' user.username  %}">{{user.username}}</a></span>
