@@ -4,7 +4,7 @@
 
 ---
 
-<img src="images/Screencast from 21-05-2021  7:07:49 WB.webm"
+<img src="images/Screencast from 21-05-2021  7:07:49 WB.webm">
 
 # Description  
 This is a clone of  Instagram where people share their  images and videos for other users to view. 
