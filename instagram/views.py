@@ -3,13 +3,14 @@ from django.http import HttpResponseRedirect, JsonResponse
 from django.contrib.auth.decorators import login_required
 from .forms import SignUpForm, UpdateUserForm, UpdateUserProfileForm, PostForm, CommentForm
 from django.contrib.auth import login, authenticate
-from .models import Post, Comment, Profile, Follow
+from .models import Photo, Post, Comment, Profile, Follow
 from django.contrib.auth.models import User
 from django.template.loader import render_to_string
 from django.views.generic import RedirectView
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import authentication, permissions
+from .models import Photo
 
 
 def signup(request):
@@ -213,3 +214,8 @@ def follow(request, to_follow):
         follow_s = Follow(follower=request.user.profile, followed=user_profile3)
         follow_s.save()
         return redirect('user_profile', user_profile3.user.username)
+
+def index(request):
+    photos = Photo.objects.all()
+    ctx = {'photos' : photos}
+    return render(request, 'instagram/index.html')
