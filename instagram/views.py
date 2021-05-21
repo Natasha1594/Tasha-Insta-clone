@@ -218,4 +218,4 @@ def follow(request, to_follow):
 def index(request):
     photos = Photo.objects.all()
     ctx = {'photos' : photos}
-    return render(request, 'instagram/index.html')
+    return render(request, 'instagram/index.html', ctx)
